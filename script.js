@@ -59,41 +59,35 @@ function animateCursor() {
 animateCursor();
 
 const PLUGIN_ID = 28720;
-const PROXY = "https://api.allorigins.win/raw?url=";
+const PROXY_URL = "https://api.allorigins.win/raw?url=";
 
 async function updateStats() {
     try {
-        const sUrl = `https://bstats.org/api/v1/plugins/${PLUGIN_ID}/charts/servers/data`;
-        const sRes = await fetch(PROXY + encodeURIComponent(sUrl));
+        const sUrl = encodeURIComponent(`https://bstats.org/api/v1/plugins/${PLUGIN_ID}/charts/servers/data`);
+        const sRes = await fetch(PROXY_URL + sUrl);
         const sData = await sRes.json();
         
-        if (sData && Array.isArray(sData) && sData.length > 0) {
+        if (sData && sData.length > 0) {
             const currentServers = sData[sData.length - 1][1];
-            let maxServers = 0;
-            for (let i = 0; i < sData.length; i++) {
-                if (sData[i][1] > maxServers) maxServers = sData[i][1];
-            }
+            const recordServers = Math.max(...sData.map(e => e[1]));
             document.getElementById('serv-curr').innerText = currentServers;
-            document.getElementById('serv-rec').innerText = maxServers;
+            document.getElementById('serv-rec').innerText = recordServers;
         }
 
-        const pUrl = `https://bstats.org/api/v1/plugins/${PLUGIN_ID}/charts/players/data`;
-        const pRes = await fetch(PROXY + encodeURIComponent(pUrl));
+        const pUrl = encodeURIComponent(`https://bstats.org/api/v1/plugins/${PLUGIN_ID}/charts/players/data`);
+        const pRes = await fetch(PROXY_URL + pUrl);
         const pData = await pRes.json();
         
-        if (pData && Array.isArray(pData) && pData.length > 0) {
+        if (pData && pData.length > 0) {
             const currentPlayers = pData[pData.length - 1][1];
-            let maxPlayers = 0;
-            for (let i = 0; i < pData.length; i++) {
-                if (pData[i][1] > maxPlayers) maxPlayers = pData[i][1];
-            }
+            const recordPlayers = Math.max(...pData.map(e => e[1]));
             document.getElementById('play-curr').innerText = currentPlayers;
-            document.getElementById('play-rec').innerText = maxPlayers;
+            document.getElementById('play-rec').innerText = recordPlayers;
         }
     } catch (e) {
-        console.error("bStats Error:", e);
-        const ids = ['serv-curr', 'serv-rec', 'play-curr', 'play-rec'];
-        ids.forEach(id => {
+        console.error(e);
+        const placeholders = ['serv-curr', 'serv-rec', 'play-curr', 'play-rec'];
+        placeholders.forEach(id => {
             const el = document.getElementById(id);
             if (el) el.innerText = "0";
         });

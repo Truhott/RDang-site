@@ -96,4 +96,5 @@ async function updateStats() {
         });
     }
 }
+
 updateStats();

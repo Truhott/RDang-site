@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RDang</title>
+    
+    <link rel="icon" type="image/png" href="https://i.postimg.cc/HsL3kMrg/simple-castle-pixel-art-style-47.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="cursor"></div>
+
+    <section class="hero">
+        <div class="container">
+            <div class="reveal active"> 
+                <div class="logo">
+                    <div class="logo-wrapper">
+                        <img src="https://i.postimg.cc/HsL3kMrg/simple-castle-pixel-art-style-47.png" alt="logo" class="logo-img">
+                    </div>
+                    <span class="brand-name">RDang</span>
+                </div>
+            </div>
+
+            <h1 class="main-title reveal delay-1">
+                Уникальные данжи<br>
+                <span class="highlight">нового поколения</span>
+            </h1>
+            
+            <p class="description reveal delay-2">
+                Уникальная и <b>безумная механика</b> от команды опытных разработчиков! 
+                Наши качественно разработанные структуры подойдут для любого сервера в Minecraft!
+            </p>
+            
+            <div class="btn-group reveal delay-3">
+                <a href="Rdang.jar" download="Rdang.jar" class="btn btn-primary">
+                    СКАЧАТЬ ПЛАГИН <span>→</span>
+                </a>
+                <button onclick="scrollToStats()" class="btn btn-secondary">
+                    СТАТИСТИКА <span>⭣</span>
+                </button>
+            </div>
+
+            <div class="versions reveal delay-3">
+                <span>1.16.x</span> <span>1.17.x</span> <span>1.18.x</span> <span>1.19.x</span> <span>1.20.x</span> <span>1.21.x</span>
+            </div>
+
+            <div class="divider-line reveal delay-4"></div>
+            <h2 class="section-title reveal delay-4">Особенности</h2>
+
+            <div class="features-box reveal delay-4">
+                <ul class="features-list">
+                    <li>Появления ключа в стандартных ванильных сокровищницах.</li>
+                    <li>Гибкая настройка лута в хранилищах внутри данжей.</li>
+                    <li>Автоматический регион и полная защита от гриферства.</li>
+                    <li>Кастомизация предметов: дизайн ключей и компасов.</li>
+                    <li>Система оповещений на весь сервер.</li>
+                    <li>Шанс сохранения ключа после использования.</li>
+                    <li>Обширная система ID: работа во всех измерениях.</li>
+                    <li>Защита от наслоения и спавна в приватах.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="stats" id="stats-anchor">
+        <div class="container">
+            <h2 class="section-title reveal">Живой статус</h2>
+            <div class="stats-grid">
+                <div class="stat-card reveal delay-1">
+                    <span class="stat-type-label">Инфраструктура</span>
+                    <span class="stat-value" id="serv-curr"><span class="loading-dots">...</span></span>
+                    <span class="stat-desc">Активных серверов</span>
+                    <div class="stat-divider"></div>
+                    <div class="stat-record-box">
+                        <span class="record-label">Рекорд за всё время</span>
+                        <span class="record-value" id="serv-rec"><span class="loading-dots">...</span></span>
+                    </div>
+                </div>
+
+                <div class="stat-card reveal delay-2">
+                    <span class="stat-type-label">Пользователи</span>
+                    <span class="stat-value" id="play-curr"><span class="loading-dots">...</span></span>
+                    <span class="stat-desc">Игроков онлайн</span>
+                    <div class="stat-divider"></div>
+                    <div class="stat-record-box">
+                        <span class="record-label">Пиковый онлайн</span>
+                        <span class="record-value" id="play-rec"><span class="loading-dots">...</span></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer reveal">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo" style="margin-bottom: 10px;">
+                        <div class="logo-wrapper">
+                            <img src="https://i.postimg.cc/HsL3kMrg/simple-castle-pixel-art-style-47.png" style="height: 30px;" class="logo-img">
+                        </div>
+                        <span class="brand-name" style="font-size: 18px;">RDang</span>
+                    </div>
+                    <p>Профессиональные решения для вашего сервера Minecraft. Уникальные механики и стабильная работа.</p>
+                </div>
+                
+                <div class="footer-nav">
+                    <h3>СООБЩЕСТВО</h3>
+                    <div class="social-icons">
+                        <a href="https://t.me/rdangcode" target="_blank" class="icon-box" title="Telegram">TG</a>
+                        <a href="https://discord.gg/qh7HUMdW" target="_blank" class="icon-box" title="Discord">DC</a>
+                        <a href="https://github.com/dbekasov11/ADang" target="_blank" class="icon-box" title="GitHub">GH</a>
+                        <a href="https://www.youtube.com/@CubeVerse-fo2eq" target="_blank" class="icon-box" title="YouTube">YT</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 RDang. Все права защищены.</p>
+                <div class="status">
+                    <span class="dot"></span>
+                    <span>СИСТЕМЫ ОНЛАЙН</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

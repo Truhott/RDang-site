@@ -3,19 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Архив статистики проектов RDang. История развития плагинов Minecraft.">
+    <meta name="theme-color" content="#000000">
     <title>Архив Проектов | RDang</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://bstats.org">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Unbounded:wght@700;800&display=swap" rel="stylesheet">
+
     <link rel="icon" type="image/png" href="https://i.postimg.cc/HsL3kMrg/simple-castle-pixel-art-style-47.png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="archive-page">
-    <div class="cursor"></div>
+    <div class="cursor" aria-hidden="true"></div>
 
-    <section class="hero" style="padding: 80px 0 40px;">
+    <section class="hero">
         <div class="container">
             <div class="reveal active">
                 <a href="index.html" class="btn btn-secondary" style="min-width: 180px; margin-bottom: 30px; padding: 12px;">← НА ГЛАВНУЮ</a>
             </div>
-            
+
             <h1 class="main-title reveal delay-1">Архив <span class="highlight">Статуса</span></h1>
             <p class="description reveal delay-2">Здесь отображается статистика <b>другого плагина</b>. Мы сохраняем историю развития всех наших проектов.</p>
         </div>
@@ -31,7 +39,7 @@
                     <div class="stat-divider"></div>
                     <div class="stat-record-box">
                         <span class="record-label">Максимум</span>
-                        <span class="record-value" id="arc-serv-rec">...</span>
+                        <span class="record-value" id="arc-serv-rec"><span class="loading-dots">...</span></span>
                     </div>
                 </div>
 
@@ -42,45 +50,21 @@
                     <div class="stat-divider"></div>
                     <div class="stat-record-box">
                         <span class="record-label">Пик онлайна</span>
-                        <span class="record-value" id="arc-play-rec">...</span>
+                        <span class="record-value" id="arc-play-rec"><span class="loading-dots">...</span></span>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="footer">
+    <footer class="footer reveal">
         <div class="container" style="text-align: center; color: #333; font-size: 12px; padding-bottom: 30px;">
             <p>© 2026 RDang Archive System</p>
         </div>
     </footer>
 
-    <script src="script.js"></script>
-    <script>
-        const ARCHIVE_ID = 26611; 
+    <button id="back-to-top" class="back-to-top" aria-label="Наверх" title="Наверх">↑</button>
 
-        async function updateArchiveStats() {
-            try {
-                const sRes = await fetch(`https://bstats.org/api/v1/plugins/${ARCHIVE_ID}/charts/servers/data`);
-                const sData = await sRes.json();
-                if (sData && sData.length > 0) {
-                    const curr = sData[sData.length - 1][1];
-                    const rec = Math.max(...sData.map(e => e[1]));
-                    document.getElementById('arc-serv-curr').innerText = curr;
-                    document.getElementById('arc-serv-rec').innerText = rec;
-                }
-
-                const pRes = await fetch(`https://bstats.org/api/v1/plugins/${ARCHIVE_ID}/charts/players/data`);
-                const pData = await pRes.json();
-                if (pData && pData.length > 0) {
-                    const curr = pData[pData.length - 1][1];
-                    const rec = Math.max(...pData.map(e => e[1]));
-                    document.getElementById('arc-play-curr').innerText = curr;
-                    document.getElementById('arc-play-rec').innerText = rec;
-                }
-            } catch (e) { console.error("Ошибка загрузки архива", e); }
-        }
-        updateArchiveStats();
-    </script>
+    <script src="script.js" defer></script>
 </body>
 </html>

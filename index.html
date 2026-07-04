@@ -3,21 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RDang</title>
-    
+    <meta name="description" content="RDang — плагин уникальных данжей для Minecraft. Кастомные схематики, защита от гриферства, гибкий лут. Поддержка 1.16–1.21.">
+    <meta name="theme-color" content="#000000">
+    <title>RDang — Уникальные данжи для Minecraft</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://bstats.org">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Unbounded:wght@700;800&display=swap" rel="stylesheet">
+
     <link rel="icon" type="image/png" href="https://i.postimg.cc/HsL3kMrg/simple-castle-pixel-art-style-47.png">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-    <div class="cursor"></div>
+    <div class="cursor" aria-hidden="true"></div>
 
     <section class="hero">
         <div class="container">
-            <div class="reveal active"> 
+            <div class="reveal active">
                 <div class="logo">
                     <div class="logo-wrapper">
-                        <img src="https://i.postimg.cc/HsL3kMrg/simple-castle-pixel-art-style-47.png" alt="logo" class="logo-img">
+                        <img src="https://i.postimg.cc/HsL3kMrg/simple-castle-pixel-art-style-47.png" alt="RDang логотип" class="logo-img" width="55" height="55" fetchpriority="high">
                     </div>
                     <span class="brand-name">RDang</span>
                 </div>
@@ -27,40 +34,99 @@
                 Уникальные данжи<br>
                 <span class="highlight">нового поколения</span>
             </h1>
-            
+
             <p class="description reveal delay-2">
-                Уникальная и <b>безумная механика</b> от команды опытных разработчиков! 
+                Уникальная и <b>безумная механика</b> от команды опытных разработчиков!
                 Наши качественно разработанные структуры подойдут для любого сервера в Minecraft!
             </p>
-            
+
             <div class="btn-group reveal delay-3">
                 <a href="Rdang.jar" download="Rdang.jar" class="btn btn-primary">
-                    СКАЧАТЬ ПЛАГИН <span>→</span>
+                    СКАЧАТЬ ПЛАГИН <span aria-hidden="true">→</span>
                 </a>
                 <button onclick="scrollToStats()" class="btn btn-secondary">
-                    СТАТИСТИКА <span>⭣</span>
+                    СТАТИСТИКА <span aria-hidden="true">⭣</span>
                 </button>
             </div>
 
-            <div class="versions reveal delay-3">
+            <div class="versions reveal delay-3" aria-label="Поддерживаемые версии Minecraft">
                 <span>1.16.x</span> <span>1.17.x</span> <span>1.18.x</span> <span>1.19.x</span> <span>1.20.x</span> <span>1.21.x</span>
             </div>
 
             <div class="divider-line reveal delay-4"></div>
             <h2 class="section-title reveal delay-4">Особенности</h2>
+            <p class="features-subtitle reveal delay-4">Всё, что нужно для идеального данжа на вашем сервере</p>
 
-            <div class="features-box reveal delay-4">
-                <ul class="features-list">
-                    <li>Появления ключа в стандартных ванильных сокровищницах.</li>
-                    <li>Полная воля свободы над схематикой данжей.</li> <li>Гибкая настройка лута в хранилищах внутри данжей.</li>
-                    <li>Автоматический регион и полная защита от гриферства.</li>
-                    <li>Кастомизация предметов: дизайн ключей и компасов.</li>
-                    <li>Система оповещений на весь сервер.</li>
-                    <li>Шанс сохранения ключа после использования.</li>
-                    <li>Обширная система ID: работа во всех измерениях.</li>
-                    <li>Защита от наслоения и спавна в приватах.</li>
-                    <li>Автоматическое удаление данжа при открытии всех шалкеров.</li>
-                </ul>
+            <div class="features-grid reveal delay-4">
+                <article class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M2 9h20v12H2z"/><path d="M2 9l3-5h14l3 5"/><path d="M10 14h4"/><circle cx="17" cy="6" r="2.5"/><path d="M17 8.5v3"/></svg>
+                    </div>
+                    <p>Появления ключа в стандартных ванильных сокровищницах</p>
+                </article>
+
+                <article class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="8" height="8"/><rect x="13" y="3" width="8" height="5"/><rect x="3" y="13" width="5" height="8"/><path d="M13 13h8v8h-8z" stroke-dasharray="3 2"/><path d="M11 7h2M7 11v2"/></svg>
+                    </div>
+                    <p>Полная воля свободы над схематикой данжей</p>
+                </article>
+
+                <article class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polygon points="12,3 21,9 17,21 7,21 3,9"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="12" y1="3" x2="7" y2="21"/><line x1="12" y1="3" x2="17" y2="21"/></svg>
+                    </div>
+                    <p>Гибкая настройка лута в хранилищах внутри данжей</p>
+                </article>
+
+                <article class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l7 4v5c0 4.5-3 7.5-7 9-4-1.5-7-4.5-7-9V7l7-4z"/><path d="M9 12l2 2 4-4"/></svg>
+                    </div>
+                    <p>Автоматический регион и полная защита от гриферства</p>
+                </article>
+
+                <article class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 18c0-3 2-5 5-5h2c1 0 2-1 2-2V8"/><path d="M13 8l5-5 2 2-5 5"/><circle cx="6" cy="18" r="2"/><circle cx="11" cy="18" r="1.5" fill="currentColor" stroke="none"/><circle cx="16" cy="18" r="1.5" fill="currentColor" stroke="none" opacity="0.5"/></svg>
+                    </div>
+                    <p>Кастомизация предметов: дизайн ключей и компасов</p>
+                </article>
+
+                <article class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 10v4h5l7 4V6l-7 4z"/><path d="M18 8c1 1 1.5 2.5 1.5 4s-.5 3-1.5 4"/><path d="M20 6c2 2 2.5 5 2.5 6s-.5 4-2.5 6"/></svg>
+                    </div>
+                    <p>Система оповещений на весь сервер</p>
+                </article>
+
+                <article class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M8 14a4 4 0 1 1 3.5-5.8"/><path d="M11.5 8.2L14 6l2 2-2 2"/><circle cx="8" cy="14" r="1" fill="currentColor" stroke="none"/><path d="M11 14h5v2h-2v3"/></svg>
+                    </div>
+                    <p>Шанс сохранения ключа после использования</p>
+                </article>
+
+                <article class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="4" y="4" width="16" height="16" rx="1"/><rect x="8" y="8" width="8" height="8" rx="1"/><path d="M4 12h16M12 4v16" opacity="0.5"/><circle cx="12" cy="12" r="2" fill="currentColor" stroke="none" opacity="0.4"/></svg>
+                    </div>
+                    <p>Обширная система ID: работа во всех измерениях</p>
+                </article>
+
+                <article class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="15" width="18" height="5" rx="1"/><rect x="5" y="10" width="14" height="5" rx="1"/><rect x="7" y="5" width="10" height="5" rx="1"/><line x1="4" y1="4" x2="20" y2="20" stroke-width="2"/></svg>
+                    </div>
+                    <p>Защита от наслоения и спавна в приватах</p>
+                </article>
+
+                <article class="feature-card">
+                    <div class="feature-icon" aria-hidden="true">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 9h16v11H4z"/><path d="M4 9l3-4h10l3 4"/><path d="M4 9h16"/><path d="M8 13l2 2 3-3 3 3"/><path d="M18 18l2 2M20 18l-2 2" stroke-width="1.2"/></svg>
+                    </div>
+                    <p>Автоматическое удаление данжа при открытии всех шалкеров</p>
+                </article>
             </div>
         </div>
     </section>
@@ -100,34 +166,36 @@
                 <div class="footer-brand">
                     <div class="logo" style="margin-bottom: 10px;">
                         <div class="logo-wrapper">
-                            <img src="https://i.postimg.cc/HsL3kMrg/simple-castle-pixel-art-style-47.png" style="height: 30px;" class="logo-img">
+                            <img src="https://i.postimg.cc/HsL3kMrg/simple-castle-pixel-art-style-47.png" alt="RDang" class="logo-img" width="30" height="30" style="height: 30px;" loading="lazy">
                         </div>
                         <span class="brand-name" style="font-size: 18px;">RDang</span>
                     </div>
                     <p>Профессиональные решения для вашего сервера Minecraft. Уникальные механики и стабильная работа.</p>
                 </div>
-                
+
                 <div class="footer-nav">
                     <h3>СООБЩЕСТВО</h3>
                     <div class="social-icons">
                         <a href="archive.html" class="icon-box" title="Архив">АРХ</a>
-                        <a href="https://t.me/rdangcode" target="_blank" class="icon-box" title="Telegram">TG</a>
-                        <a href="https://discord.gg/qh7HUMdW" target="_blank" class="icon-box" title="Discord">DC</a>
-                        <a href="https://github.com/dbekasov11/ADang" target="_blank" class="icon-box" title="GitHub">GH</a>
-                        <a href="https://www.youtube.com/@CubeVerse-fo2eq" target="_blank" class="icon-box" title="YouTube">YT</a>
+                        <a href="https://t.me/rdangcode" target="_blank" rel="noopener noreferrer" class="icon-box" title="Telegram">TG</a>
+                        <a href="https://discord.gg/qh7HUMdW" target="_blank" rel="noopener noreferrer" class="icon-box" title="Discord">DC</a>
+                        <a href="https://github.com/dbekasov11/ADang" target="_blank" rel="noopener noreferrer" class="icon-box" title="GitHub">GH</a>
+                        <a href="https://www.youtube.com/@CubeVerse-fo2eq" target="_blank" rel="noopener noreferrer" class="icon-box" title="YouTube">YT</a>
                     </div>
                 </div>
             </div>
             <div class="footer-bottom">
                 <p>© 2026 RDang. Все права защищены.</p>
                 <div class="status">
-                    <span class="dot"></span>
+                    <span class="dot" aria-hidden="true"></span>
                     <span>СИСТЕМЫ ОНЛАЙН</span>
                 </div>
             </div>
         </div>
     </footer>
 
-    <script src="script.js"></script>
+    <button id="back-to-top" class="back-to-top" aria-label="Наверх" title="Наверх">↑</button>
+
+    <script src="script.js" defer></script>
 </body>
 </html>
